@@ -16,7 +16,7 @@ module.exports = async (request, response) => {
             // 将用户名存储在请求对象中
             request.session.username = user.username;
             request.app.locals.userInfo = user;
-            console.log(request);
+            // console.log(request);
             // 重定向到用户列表页面
             response.redirect('/admin/users');
         } else {
