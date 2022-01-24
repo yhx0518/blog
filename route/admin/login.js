@@ -15,9 +15,9 @@ module.exports = async (request, response) => {
         if (isValid) {
             // 将用户名存储在请求对象中
             request.session.username = user.username;
-            // 重定向到用户列表页面
             request.app.locals.userInfo = user;
             console.log(request);
+            // 重定向到用户列表页面
             response.redirect('/admin/users');
         } else {
             response.status(400).render('admin/error', { msg: '邮件地址或者密码错误' });

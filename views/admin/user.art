@@ -13,7 +13,7 @@
         	<!-- 分类标题 -->
             <div class="title">
                 <h4>用户 {{userInfo && userInfo.username}}</h4>
-                <span>找到1个用户</span>
+                <span>一共{{count}}个用户</span>
                 <a href="/admin/user-edit" class="btn btn-primary new">新增用户</a>
             </div>
             <!-- /分类标题 -->
@@ -38,7 +38,7 @@
                         <td>{{$value.role === 'admin' ? '超级管理员' : '普通用户'}}</td>
                         <td>{{$value.state === 0 ? '启用' : '未启用'}}</td>
                         <td>
-                            <a href="user-edit.html" class="glyphicon glyphicon-edit"></a>
+                            <a href="/admin/user-edit?id={{@$value._id}}" class="glyphicon glyphicon-edit"></a>
                             <i class="glyphicon glyphicon-remove" data-toggle="modal" data-target=".confirm-modal"></i>
                         </td>
                     </tr>
@@ -48,18 +48,16 @@
             <!-- /内容列表 -->
             <!-- 分页 -->
             <ul class="pagination">
-                <li>
-                    <a href="#">
+                <li style="display: <%= page-1 < 1 ? 'none' : 'inline' %>">
+                    <a href="/admin/users?page=<%=page-1%>">
 			        <span>&laquo;</span>
 			      </a>
                 </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                    <a href="#">
+                <% for(let i = 1; i <= total; i++) { %>
+                    <li><a href='/admin/users?page=<%=i%>'>{{i}}</a></li>
+                <% } %>
+                <li style="display: <%= page*1+1 > total ? 'none' : 'inline'%>">
+                    <a href="/admin/users?page=<%=page*1+1%>">
 			        <span>&raquo;</span>
 			      </a>
                 </li>
