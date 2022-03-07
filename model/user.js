@@ -38,7 +38,7 @@ const userSchema = new mongoose.Schema({
 // 创建集合
 const User = mongoose.model('User', userSchema);
 
-async function createUser() {
+/* async function createUser() {
     const salt = await bcrypt.genSalt(10);
     const pass = await bcrypt.hash('123456', salt);
     User.create({
@@ -53,7 +53,7 @@ async function createUser() {
     });
 }
 
-// createUser();
+createUser(); */
 
 // 验证用户信息
 const validateUser = user => {
