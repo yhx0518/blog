@@ -1,5 +1,9 @@
 const { User } = require('../../model/user');
 module.exports = async (request, response) => {
+
+    // 标识 表示当前访问的是用户管理页面
+    request.app.locals.currentLink = 'user';
+
     const { message, id } = request.query;
     if (id) {
         let user = await User.findOne({ _id: id });

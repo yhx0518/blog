@@ -1,7 +1,11 @@
 const express = require('express');
 const path = require('path');
-const bodyParser = require('body-parser')
-const session = require('express-session')
+const bodyParser = require('body-parser');
+const session = require('express-session');
+const template = require('art-template');
+const dateFormat = import('dateformat');
+// 像模版内部导入dateFormat 变量
+template.defaults.imports.dateFormat = dateFormat;
 
 const app = express();
 // 数据库连接
@@ -12,7 +16,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(session({
     resave: false,
     saveUninitialized: false,
-    secret: 'secret key'
+    secret: 'secret key',
+    cookie: {
+        maxAge: 24 * 60 * 60 * 1000
+    }
 }));
 
 // 模板存放的位置

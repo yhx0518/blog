@@ -21,4 +21,16 @@ admin.post('/user-edit', require('./admin/user-edit-fn'));
 
 admin.post('/user-modify', require('./admin/user-modify'));
 
+// 删除用户路由
+admin.get('/delete', require('./admin/user-delete'));
+
+// 商品列表页面路由
+admin.get('/article', require('./admin/article'));
+
+// 商品编辑路由
+admin.get('/article-edit', require('./admin/article-edit'));
+
+// 实现商品添加路由
+admin.post('/article-add', require('./admin/article-add'))
+
 module.exports = admin;
