@@ -6,7 +6,7 @@ module.exports = async (request, response) => {
     request.app.locals.currentLink = 'article';
     // 查询所有文章数据
     // {}, { title: 1, kind: 1, price: 1, cover: 1, count: 1 }
-    const articles = await pagination(Article).find({}, { title: 1, kind: 1, price: 1, cover: 1, count: 1 }).page(page).size(2).display(3).populate('kind').exec();
+    const articles = await pagination(Article).find({}, { title: 1, kind: 1, price: 1, cover: 1, count: 1 }).page(page).size(5).display(3).populate('kind').exec();
     const article1 = JSON.stringify(articles);
     const article2 = JSON.parse(article1)
     // response.send(articles);
