@@ -38,8 +38,12 @@
                         <td>{{$value.role === 'admin' ? '超级管理员' : '普通用户'}}</td>
                         <td>{{$value.state === 0 ? '启用' : '未启用'}}</td>
                         <td>
-                            <a href="/admin/user-edit?id={{@$value._id}}" class="glyphicon glyphicon-edit" style="display: {{ userInfo.role === 'admin' ? 'inline' : 'none' && userInfo.username === $value.username ? 'inline' : 'none' }}"></a>
-                            <i class="glyphicon glyphicon-remove delete" data-toggle="modal" data-target=".confirm-modal" style="display: {{ userInfo.role === 'admin' ? 'inline' : 'none' }}" data-id="{{@$value._id}}" ></i>
+                            {{if userInfo.role === 'admin' || userInfo.username === $value.username}}
+                                <a href="/admin/user-edit?id={{@$value._id}}" class="glyphicon glyphicon-edit"></a>
+                            {{/if}}
+                            {{if userInfo.role === 'admin'}}
+                                <i class="glyphicon glyphicon-remove delete" data-toggle="modal" data-target=".confirm-modal" data-id="{{@$value._id}}" ></i>
+                            {{/if}}
                         </td>
                     </tr>
                 {{/each}}
