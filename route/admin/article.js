@@ -9,6 +9,7 @@ module.exports = async (request, response) => {
     const articles = await pagination(Article).find({}, { title: 1, kind: 1, price: 1, cover: 1, count: 1 }).page(page).size(5).display(3).populate('kind').exec();
     const article1 = JSON.stringify(articles);
     const article2 = JSON.parse(article1)
+    // console.log(articles);
     // response.send(articles);
 
 

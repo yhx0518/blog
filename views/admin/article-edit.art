@@ -12,6 +12,7 @@
             <!-- 分类标题 -->
             <div class="title">
                 <h4 style="display:{{goods ? 'block' : 'none'}}">{{@goods && goods._id}}</h4>
+                <p class="tips">{{message}}</p>
             </div>
             <!-- /分类标题 -->
             <form class="form-container" action="{{link}}" method="post" enctype="multipart/form-data">

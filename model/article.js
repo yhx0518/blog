@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Joi = require('joi');
 // 创建商品集合规则
 const articleSchema = new mongoose.Schema({
     title: {
@@ -31,6 +32,18 @@ const articleSchema = new mongoose.Schema({
 
 const Article = mongoose.model('Article', articleSchema);
 
+const validateArticle = article => {
+    // 定义对象的验证规则
+    const schema = Joi.object({
+        title: Joi.string().min(3).max(10).required().error(new Error('商品名称应为3~10个字')),
+        price: Joi.number().required().error(new Error('价格非法')),
+        count: Joi.number().required().error(new Error('数量值非法')),
+    });
+    return schema.validateAsync(article);
+}
+
+
 module.exports = {
-    Article
+    Article,
+    validateArticle
 }

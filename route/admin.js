@@ -36,4 +36,7 @@ admin.post('/article-add', require('./admin/article-add'));
 // 实现商品修改的路由
 admin.post('/article-modify', require('./admin/article-modify'));
 
+// 商品删除的路由
+admin.get('/article-delete', require('./admin/article-delete'))
+
 module.exports = admin;
