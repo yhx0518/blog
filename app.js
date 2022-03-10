@@ -3,9 +3,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const template = require('art-template');
-const dateFormat = import('dateformat');
-// 像模版内部导入dateFormat 变量
-template.defaults.imports.dateFormat = dateFormat;
+const dateFormat = require('dateformat');
 
 const app = express();
 // 数据库连接
@@ -28,6 +26,10 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'art');
 // 当渲染后缀为art的模板时使用的后缀是什么
 app.engine('art', require('express-art-template'));
+
+// 像模版内部导入dateFormat 变量
+template.defaults.imports.dateFormat = dateFormat;
+
 
 // 网站静态资源服务
 app.use(express.static(path.join(__dirname, 'public')));

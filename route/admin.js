@@ -37,6 +37,15 @@ admin.post('/article-add', require('./admin/article-add'));
 admin.post('/article-modify', require('./admin/article-modify'));
 
 // 商品删除的路由
-admin.get('/article-delete', require('./admin/article-delete'))
+admin.get('/article-delete', require('./admin/article-delete'));
+
+// 机器列表路由
+admin.get('/machine', require('./admin/machine'));
+
+// 机器编辑路由
+admin.get('/machine-edit', require('./admin/machine-edit'));
+
+// 增加机器路由
+admin.post('/machine-add', require('./admin/machine-add'));
 
 module.exports = admin;

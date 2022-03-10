@@ -13,6 +13,12 @@
 			  			商品管理
 			  		</a>
                 </li>
+                <li>
+                    <a class="item {{currentLink == 'machine' ? 'active' : ''}}" href="/admin/machine">
+			  			<span class="glyphicon glyphicon-inbox"></span>
+			  			机器管理
+			  		</a>
+                </li>
             </ul>
             <div class="cprt">
                 Powered by
