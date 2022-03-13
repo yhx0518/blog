@@ -48,4 +48,10 @@ admin.get('/machine-edit', require('./admin/machine-edit'));
 // 增加机器路由
 admin.post('/machine-add', require('./admin/machine-add'));
 
+// 修改机器路由
+admin.post('/machine-modify', require('./admin/machine-modify'));
+
+// 删除机器路由
+admin.get('/machine-delete', require('./admin/machine-delete'));
+
 module.exports = admin;
