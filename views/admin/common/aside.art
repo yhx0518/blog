@@ -14,6 +14,12 @@
 			  		</a>
                 </li>
                 <li>
+                    <a class="item {{currentLink == 'kind' ? 'active' : ''}}" href="/admin/kind">
+			  			<span class="glyphicon glyphicon-fullscreen"></span>
+			  			种类管理
+			  		</a>
+                </li>
+                <li>
                     <a class="item {{currentLink == 'machine' ? 'active' : ''}}" href="/admin/machine">
 			  			<span class="glyphicon glyphicon-inbox"></span>
 			  			机器管理

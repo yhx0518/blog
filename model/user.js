@@ -25,7 +25,8 @@ const userSchema = new mongoose.Schema({
     // normal 普通用户
     role: {
         type: String,
-        required: true
+        required: true,
+        default: 'normal'
     },
     // 0: 启用状态
     // 1: 禁用状态
@@ -62,7 +63,7 @@ const validateUser = user => {
         username: Joi.string().min(2).max(12).required().error(new Error('用户名应为2~12位')),
         email: Joi.string().email().required().error(new Error('邮箱地址不正确')),
         password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/).required().error(new Error('密码未通过验证')),
-        role: Joi.string().valid('normal', 'admin').required().error(new Error('角色值非法')),
+        // role: Joi.string().valid('normal', 'admin').required().error(new Error('角色值非法')),
         state: Joi.number().valid(0, 1).required().error(new Error('状态值非法'))
     });
     // 实施验证

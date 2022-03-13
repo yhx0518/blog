@@ -12,13 +12,6 @@ const KindSchema = new mongoose.Schema({
 
 const Kinds = mongoose.model('Kinds', KindSchema);
 
-async function main() {
-    Kinds.create({
-        kindName: '避孕'
-    });
-}
-
-// main()
 
 /* mongoose.connection.on('open', () => {
     console.log('数据库连接成功');

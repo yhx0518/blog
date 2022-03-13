@@ -18,7 +18,7 @@ module.exports = async (request, response) => {
     } else {
         let link = '/admin/user-edit';
         let button = '添加'
-        response.render('admin/user-edit', {
+        return response.render('admin/user-edit', {
             message,
             link,
             button

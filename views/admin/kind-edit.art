@@ -1,0 +1,50 @@
+{{extend './common/layout.art'}}
+
+{{block 'main'}}
+    {{include './common/header.art'}}
+    <!-- 主体内容 -->
+    <div class="content">
+        {{include './common/aside.art'}}
+        <div class="main">
+            <!-- 分类标题 -->
+            <div class="title">
+            {{if kinds}}
+                <h4>{{@kinds && kinds._id}}</h4>
+            {{/if}}
+                <p class="tips">{{message}}</p>
+            </div>
+            <!-- /分类标题 -->
+            <form class="form-container" action="{{link}}" method="post">
+                <div class="form-group">
+                    <label>商品种类</label>
+                    <input type="text" class="form-control" placeholder="请输入商品种类" id="kindName" name="kindName" value={{kinds && kinds.kindName}}>
+                </div>
+                <div class="buttons">
+                    <input type="submit" class="btn btn-primary" value={{button}}>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+    <!-- /主体内容 -->
+{{/block}}
+
+{{block 'script'}}
+    <script src="/admin/lib/ckeditor5/ckeditor.js"></script>
+    <script type="text/javascript">
+    
+        let editor;
+
+        ClassicEditor
+                .create( document.querySelector('#editor'))
+                .then(newEditor => {
+                    editor = newEditor;
+                })
+                .catch( error => {
+                    console.error( error );
+                });
+
+        // 获取数据
+        // const editorData = editor.getData();
+    </script>
+{{/block}}

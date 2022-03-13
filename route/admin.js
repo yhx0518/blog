@@ -54,4 +54,19 @@ admin.post('/machine-modify', require('./admin/machine-modify'));
 // 删除机器路由
 admin.get('/machine-delete', require('./admin/machine-delete'));
 
+// 种类列表
+admin.get('/kind', require('./admin/kind'));
+
+// 种类编辑路由
+admin.get('/kind-edit', require('./admin/kind-edit'));
+
+// 添加种类路由
+admin.post('/kind-add', require('./admin/kind-add'));
+
+// 编辑种类路由
+admin.post('/kind-modify', require('./admin/kind-modify'));
+
+// 删除种类
+admin.get('/kind-delete', require('./admin/kind-delete'));
+
 module.exports = admin;
