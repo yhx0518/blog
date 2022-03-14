@@ -8,6 +8,13 @@ const KindSchema = new mongoose.Schema({
         unique: true,
         required: true
     }
+});
+
+KindSchema.virtual('articles', {
+    ref: 'Article',
+    localField: '_id',
+    foreignField: 'kind',
+    justOne: false
 })
 
 const Kinds = mongoose.model('Kinds', KindSchema);

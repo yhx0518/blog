@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0045)http://www.lijava.top/Ambition/acart/cart.jsp -->
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="//s.geilicdn.com/p5/shop/20184/images/common/favicon.178fdee5.ico" rel="shortcut icon"
+		type="image/x-icon">
+
+	<title>自动售货机购物车</title>
+
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery.form.js"></script>
+	<script type="text/javascript">
+
+	</script>
+
+	<style type="text/css">
+		table {
+			border-collapse: collapse;
+			border-spacing: 0px;
+
+		}
+
+		table th {
+			line-height: 36px;
+			padding: 0px 10px;
+			color: #999999;
+			font-weight: normal;
+			text-align: left;
+			border: solid 1px #e6e4e3;
+			background-color: #fafafa;
+		}
+
+		table tr {
+			border: solid 1px #e6e4e3;
+		}
+
+		table td {
+			border: solid 1px #e6e4e3;
+		}
+
+		#submit {
+			padding: 25px;
+			color: #ffffff;
+			background-color: #b31d04;
+		}
+
+		#clear {
+			margin-right: 10px;
+		}
+
+		.bottom {
+			height: 30px;
+			width: 640px;
+			line-height: 30px;
+			margin-bottom: 10px;
+			overflow: hidden;
+			border: solid 1px #e6e4e3;
+			background-color: #fafafa;
+		}
+
+		.total {
+			padding: 10px 0px;
+			margin-bottom: 10px;
+			text-align: right;
+		}
+
+		.total em {
+			margin-right: 14px;
+			color: #ff6600;
+			font-style: normal;
+		}
+
+		.total strong {
+			color: #ef0101;
+			font-size: 14px;
+		}
+
+		.cart {
+			width: 130px;
+			height: 50px;
+			_display: inline;
+			float: left;
+			padding-left: 30px;
+			margin-left: 80px;
+			margin-bottom: 4px;
+			float: rigth;
+		}
+
+		.cart1 {
+			width: 50px;
+			height: 50px;
+			color: red;
+			line-height: 28px;
+			_display: inline;
+			float: left;
+			padding-left: 30px;
+			margin-left: 80px;
+			margin-bottom: 4px;
+		}
+	</style>
+
+</head>
+
+<body style="max-width: 900px; font-size: 12px;">
+
+	<link href="./css/supermarket.min.css" type="text/css" rel="stylesheet">
+
+	<div class="head_nav"></div>
+	<div id="index_cover" class="index_cover hide"></div>
+	<div id="wd_show1" style="width: 900px">
+		<div id="common_hd1" class="weidian_default" style="padding-left: 0px;height: 80px;width: 900px;">
+			<div class="cart" style="float: right;line-height: 75px">
+				<a href="#">
+					<img src="./img/png-0621.jpg" style="width: 50px;height: 50px">
+					<font size="5px" style="line-height: 50px">购物车</font>
+				</a>
+			</div>
+			<div class="font2" style="float: right;line-height: 100px">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<font size="5px">|</font>
+			</div>
+
+			<div class="cart1" style="float: right;line-height: 100px">
+				<a href="#">
+					<font size="5px">首页</font>
+				</a>
+			</div>
+		</div>
+		<div class="headerxm">
+			<div class="custom-bar">
+				<h2 class="shop-name">自动售货机</h2>
+				<div class="hd_note_wrap">
+					<marquee>
+						<p id="" style="animation-duration: 20s;">
+							<font size="3px"><b>如果不显示列表，请您到首页，点击购物车再次进入!</b></font>
+						</p>
+					</marquee>
+				</div>
+			</div>
+		</div>
+		<br>
+
+		<div align="center" style="height: 100%">
+			<table style="width:900px;height: 100%">
+				<tbody>
+					<tr>
+						<th>图片</th>
+						<th>商品</th>
+						<th>价格</th>
+						<th>数量</th>
+						<th>小计</th>
+						<th>操作</th>
+					</tr>
+
+
+					<tr style="height: 100px">
+						<td width="100">
+							<img src="" style="width: 90px;height: 100px">
+						</td>
+						<td>
+							<font size="5px">
+								<a target="_blank">康师傅茉莉果茶</a>
+							</font>
+						</td>
+						<td>
+							<font size="5px">
+								￥0.01
+							</font>
+						</td>
+						<td class="quantity" width="60">
+							<font size="5px">
+								1
+							</font>
+						</td>
+						<td width="140">
+							<font size="5px">
+								<span class="subtotal">￥0.01</span>
+							</font>
+						</td>
+						<td>
+							<font size="5px">
+								<a href="#" class="delete">删除</a>
+							</font>
+						</td>
+					</tr>
+
+
+				</tbody>
+			</table>
+		</div>
+
+		<div class="bottom" align="right" style="width: 900px;height: 50px;line-height: 50px">
+			<a href="#" id="clear" class="clear">
+				<font size="5px">清空购物车</font>
+			</a>
+
+			<a href="#" id="submit" class="submit">
+				<font size="5px">去支付</font>
+			</a>
+		</div>
+	</div>
+
+
+</body>
+
+</html>

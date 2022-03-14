@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<title>自动售货机</title>
+
+	<meta name="spider-id" content="o69xrz">
+
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<meta content="telephone=no" name="format-detection">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link href="//s.geilicdn.com/p5/shop/20184/images/common/favicon.178fdee5.ico" rel="shortcut icon"
+		type="image/x-icon">
+
+
+	<style type="text/css">
+		.cart {
+			width: 75px;
+			line-height: 20px;
+			padding-left: 30px;
+			margin-left: 80px;
+			margin-bottom: 4px;
+			border-right: 1px solid #d8d8d8;
+			margin: 12px 12px 0 0;
+			display: inline-block;
+			font-size: 14px;
+			height: 20px;
+			color: #404040
+		}
+	</style>
+	<link rel="stylesheet" href="/home/css/bootstrap.min.css">
+	<link href="/home/css/supermarket.min.css" type="text/css" rel="stylesheet">
+</head>
+
+<body style="max-width: 640px; font-size: 12px;">
+
+	<div class="head_nav"></div>
+	<div id="index_cover" class="index_cover hide"></div>
+	<div id="wd_show">
+		<div id="common_hd" class="weidian_default" style="padding-left: 68px">
+			<a id="alliance_GO_logo" class="icon-global hide" href="javascript:void(0);"></a>
+			<div class="my_shop for_gaq no-login active" data-for-gaq="点击我的微店;店铺页">
+				<a href="/admin/login">管理员登录</a>
+				<span></span>
+			</div>
+			<div class="cart" style="float: right;">
+				<a href="#">购物车</a>
+			</div>
+		</div>
+		<div class="headerxm">
+			<div class="avatar">
+				<img src="/home/images/vshop1027968340-1490082514.jpg" alt="店铺头像">
+			</div>
+			<div class="custom-bar">
+				<h2 class="shop-name">
+					自动售货机
+					<div class="">
+						<marquee>
+							<p id="" style="animation-duration: 20s;">
+								近期售货机出现问题管理员联系电话15645191096 有问题请咨询管理员
+							</p>
+						</marquee>
+					</div>
+				</h2>
+			</div>
+		</div>
+		<!-- 限制一页显示几个商品  style="height: 500px;"-->
+		<section class="content" id="shopClassList" style="height:90%;width:100%;">
+			<!-- 商品类别区域 -->
+			<div id="vtabScrollWrapper">
+				<ul class="vtab" id="vtab">
+					{{each kinds}}
+						<a href="/home?kindId={{@$value._id}}">
+						<li>
+							{{$value.kindName}}
+						</li>
+					</a>
+					{{/each}}
+				</ul>
+			</div>
+			<div style="float: right;">
+				{{if !goods[0]}}
+					<h1 style="padding: 10vw">欢迎使用自动售货机</h1>
+					<h2 style="padding: 0 13vw;">黑河学院</h2>
+					
+				{{/if}}
+				{{each goods}}
+					<div style="height: auto;">
+					<a href="#">
+					</a>
+					<div class="vtab-item"><a href="/home/articles?id={{@$value._id}}">
+							<img src="{{$value.cover}}" class="item-img">
+						</a>
+						<div class="item-info clickfocus"><a href="/home/articles?goodId={{@$value._id}}">
+								<span class="item-title clickfocus">{{$value.title}}</span>
+								<div class="item-price clickfocus">
+									<span class="item-price-kill clickfocus">￥ {{$value.price}}</span>
+								</div>
+							</a>
+							<div class="item-sold clickfocus"><a href="/home/articles?goodId={{@$value._id}}">
+									<span>剩余数量: {{$value.count}}</span>
+									<!-- 从购物车减去 &path=?cid= -->
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				{{/each}}
+			</div>
+		</section>
+	</div>
+	<script>
+		const count = document.querySelector('#count');
+		console.log(count);
+	</script>
+</body>
+
+</html>
