@@ -25,6 +25,12 @@
 			  			机器管理
 			  		</a>
                 </li>
+                <li>
+                    <a class="item {{currentLink == 'statistics' ? 'active' : ''}}" href="/admin/statistics">
+			  			<span class="glyphicon glyphicon-usd"></span>
+			  			订单管理
+			  		</a>
+                </li>
             </ul>
             <div class="cprt">
                 Powered by

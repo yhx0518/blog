@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0045)http://www.lijava.top/Ambition/acart/cart.jsp -->
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="//s.geilicdn.com/p5/shop/20184/images/common/favicon.178fdee5.ico" rel="shortcut icon"
+		type="image/x-icon">
+
+	<title>自动售货机购物车</title>
+
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery.form.js"></script>
+	<script type="text/javascript">
+
+	</script>
+
+	<style>
+		.container {
+			position: relative;
+		}
+
+		.wechat-pay {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			margin: 5vw 0;
+			width: 300px;
+			height: 300px;
+		}
+
+		.font {
+			position: absolute;
+			top: 10vw;
+			left: 30vw;
+			font-size: 35px;
+			color: red;
+			z-index: 2;
+		}
+	</style>
+
+</head>
+
+<body style="max-width: 900px; font-size: 12px;">
+
+	<link href="/home/css/supermarket.min.css" type="text/css" rel="stylesheet">
+
+	<div class="head_nav"></div>
+	<div class="container">
+		<a href="/home">
+			<h2 class="font">￥{{goods.price}}</h2>
+			<div class="wechat-pay">
+				<img src="/home/images/wechat.jpg" alt="微信支付" style="width: 100%;">
+			</div>
+		</a>
+	</div>
+
+</body>
+
+
+</html>

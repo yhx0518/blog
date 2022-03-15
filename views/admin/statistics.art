@@ -1,0 +1,66 @@
+{{extend './common/layout.art'}}
+
+{{block 'main'}}
+    {{include './common/header.art'}}
+    <!-- 主体内容 -->
+    <div class="content">
+    	{{include './common/aside.art'}}
+        <div class="main">
+        	<!-- 分类标题 -->
+            <div class="title">
+                <h4>统计</h4>
+            </div>
+            <!-- /分类标题 -->
+            <!-- 内容列表 -->
+            <table class="table table-striped table-bordered table-hover custom-table">
+                <thead>
+                    <tr>
+                        <th>商品名称</th>
+                        <th>价格</th>
+                        <th>销售时间</th>
+                        <th>机器号</th>
+                        <th>楼号</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{each sellings.records}}
+                        <tr>
+                        <td>{{$value.title}}</td>
+                        <td>{{$value.price}}</td>
+                        <td>{{dateFormat($value.Selltime, 'yyyy-mm-dd')}}</td>
+                        <td>{{$value.machineNumber}}</td>
+                        <td>
+                            {{$value.tower}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            <!-- /内容列表 -->
+            <!-- 分页 -->
+            <ul class="pagination">
+                {{if sellings.page > 1}}
+                    <li>
+                        <a href="/admin/statistics?page={{sellings.page - 1}}">
+    		                <span>&laquo;</span>
+    		            </a>
+                    </li>
+                {{/if}}
+                {{each sellings.display}}
+                    <li><a href="/admin/statistics?page={{$value}}">{{$value}}</a></li>
+                {{/each}}
+                {{if sellings.page < sellings.pages}}
+                    <li>
+                        <a href="/admin/statistics?page={{sellings.page - 0 
+                        + 1}}">
+    		                <span>&raquo;</span>
+    		            </a>
+                    </li>
+                {{/if}}
+            </ul>
+            <!-- /分页 -->
+        </div>
+    </div>
+    <!-- /主体内容 -->
+    <!-- 删除确认弹出框 -->
+{{/block}} 

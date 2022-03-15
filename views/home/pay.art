@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0045)http://www.lijava.top/Ambition/acart/cart.jsp -->
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="//s.geilicdn.com/p5/shop/20184/images/common/favicon.178fdee5.ico" rel="shortcut icon"
+		type="image/x-icon">
+
+	<title>自动售货机购物车</title>
+
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery.form.js"></script>
+	<script type="text/javascript">
+
+	</script>
+
+	<style>
+		.container {
+			position: relative;
+		}
+
+		.wechat-pay {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			margin: 5vw 0;
+			width: 300px;
+			height: 300px;
+		}
+
+		.ali-pay {
+			position: absolute;
+			left: 50%;
+			margin: 27vw 0;
+			transform: translateX(-50%);
+			width: 300px;
+			height: 300px;
+		}
+
+		.font {
+			padding: 2vw 0 0 2vw;
+			font-size: 25px;
+		}
+
+		.main {
+			font-size: 20px
+		}
+	</style>
+
+</head>
+
+<body style="max-width: 900px; font-size: 12px;">
+
+	<link href="/home/css/supermarket.min.css" type="text/css" rel="stylesheet">
+
+	<div class="head_nav"></div>
+	<div class="container">
+		<h2 class="font">
+			请选择支付方式:
+		</h2>
+		<a href="/home" style="float: right; padding: 3vw 2vw 0 0" class="main">
+			首页
+		</a>
+		<a href="/home/pay-wechat?goodsId={{goodsId}}">
+			<div class="wechat-pay">
+				<img src="/home/images/wechat-pay.png" alt="微信支付" style="width: 100%;">
+			</div>
+		</a>
+		<a href="/home/pay-ali?goodsId={{goodsId}}">
+			<div class="ali-pay">
+				<img src="/home/images/ali-pay.jpg" alt="支付宝支付" style="width: 100%;">
+			</div>
+		</a>
+	</div>
+
+
+</body>
+
+</html>

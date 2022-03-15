@@ -52,7 +52,7 @@
                 </li>
                 {{/if}}
                 {{each machine.display}}
-                <li><a href="/admin/machine?page={{$value}}">{{$value}}</a></li>
+                    <li><a href="/admin/machine?page={{$value}}">{{$value}}</a></li>
                 {{/each}}
                 {{if machine.page < machine.pages}}
                 <li>

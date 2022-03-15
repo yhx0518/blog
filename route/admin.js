@@ -69,4 +69,7 @@ admin.post('/kind-modify', require('./admin/kind-modify'));
 // 删除种类
 admin.get('/kind-delete', require('./admin/kind-delete'));
 
+// 订单管理展示
+admin.get('/statistics', require('./admin/statistics'));
+
 module.exports = admin;

@@ -554,8 +554,10 @@
 
 <body data-spider="sg5zkxvp" data-spider-prior="itemdetail" class="ignore_weixin_login">
     <div class="download " data-spider-prior="topbar_download">
-        <img class="logo" height="37px" width="37px"
+        <a href="/home">
+            <img class="logo " height="37px" width="37px"
             src="//s.geilicdn.com/p5/shop/20184/images/common/buyer-logo.e3188800.png">
+        </a>
         <div class="download-text">
             <div class="big">自动售货机</div>
             <div class="small"></div>
@@ -566,7 +568,7 @@
             <div class="head_wrapper_top"></div>
             <div class="head_wrapper" id="head_wrapper" style="position: absolute;top: 1.6rem;">
                 <div id="common_hd" class="weidian_default" data-spider="IrCZFdYwUz" data-spider-prior="head">
-                    <a class="icon-new-cart for_gaq for_trans_pass" data-for-gaq="加入购物车-top-详情页" href="/cart/index.php"
+                    <a class="icon-new-cart for_gaq for_trans_pass" data-for-gaq="加入购物车-top-详情页" href="javascript:;"
                         data-spider-action-name="goToCart" data-spider-action-args='{"itemId": "2079025210"}'>
                         <span></span>
                     </a>
@@ -626,9 +628,9 @@
                          <form action="#" method="post" id="form1">
                         <input type="hidden" name="gid" value="151" id="gid">
                         <!--  数量：<input type="text" style="width: 50px;height: 50px" value="" />-->
-                        <a id="add_cart" class="c_txt abs for_gaq" data-for-gaq="加入购物车">加入购物车</a>
+                        <a href="/home/cart?goodId={{@goods._id}}" id="add_cart" class="c_txt abs for_gaq" data-for-gaq="加入购物车">加入购物车</a>
                     </form>
-                    <a id="buy_now" class="btnok c_txt abs send_gaq" href="#">立即购买</a>
+                    <a id="buy_now" class="btnok c_txt abs send_gaq" href="/home/payment?goodsId={{@goods._id}}">立即购买</a>
                     {{/if}}
                     {{if goods.count === 0}}
                         <a id="sellerOut" class="c_txt abs for_gaq" data-for-gaq="已售完" >已售完</a>

@@ -113,7 +113,7 @@
 		<div id="common_hd1" class="weidian_default" style="padding-left: 0px;height: 80px;width: 900px;">
 			<div class="cart" style="float: right;line-height: 75px">
 				<a href="#">
-					<img src="./img/png-0621.jpg" style="width: 50px;height: 50px">
+					<img src="/home/images/png-0621.jpg" style="width: 50px;height: 50px">
 					<font size="5px" style="line-height: 50px">购物车</font>
 				</a>
 			</div>
@@ -123,7 +123,7 @@
 			</div>
 
 			<div class="cart1" style="float: right;line-height: 100px">
-				<a href="#">
+				<a href="/home">
 					<font size="5px">首页</font>
 				</a>
 			</div>
@@ -143,8 +143,8 @@
 		<br>
 
 		<div align="center" style="height: 100%">
-			<table style="width:900px;height: 100%">
-				<tbody>
+			<table style="width:900px;height: 100%" >
+				<tbody class="all">
 					<tr>
 						<th>图片</th>
 						<th>商品</th>
@@ -155,18 +155,18 @@
 					</tr>
 
 
-					<tr style="height: 100px">
+					<tr style="height: 100px" class="child">
 						<td width="100">
-							<img src="" style="width: 90px;height: 100px">
+							<img src="{{goods && goods.cover}}" style="width: 90px;height: 100px">
 						</td>
 						<td>
 							<font size="5px">
-								<a target="_blank">康师傅茉莉果茶</a>
+								<a target="_blank">{{goods && goods.title}}</a>
 							</font>
 						</td>
 						<td>
 							<font size="5px">
-								￥0.01
+								￥{{goods && goods.price}}
 							</font>
 						</td>
 						<td class="quantity" width="60">
@@ -176,12 +176,12 @@
 						</td>
 						<td width="140">
 							<font size="5px">
-								<span class="subtotal">￥0.01</span>
+								<span class="subtotal">￥{{goods && goods.price}}</span>
 							</font>
 						</td>
 						<td>
 							<font size="5px">
-								<a href="#" class="delete">删除</a>
+								<a href="javascript:;" class="delete">删除</a>
 							</font>
 						</td>
 					</tr>
@@ -192,16 +192,25 @@
 		</div>
 
 		<div class="bottom" align="right" style="width: 900px;height: 50px;line-height: 50px">
-			<a href="#" id="clear" class="clear">
+			<a href="/home/cart" id="clear" class="clear">
 				<font size="5px">清空购物车</font>
 			</a>
 
-			<a href="#" id="submit" class="submit">
+			<a href="/home/payment?goodsId={{@goods._id}}" id="submit" class="submit">
 				<font size="5px">去支付</font>
 			</a>
 		</div>
 	</div>
 
+	<script>
+		let deleteBtn = document.querySelector('.delete');
+		// console.log(deleteBtn)
+		let all = document.querySelector('.all');
+		let child = document.querySelector('.child');
+		deleteBtn.addEventListener('click', () => {
+			all.removeChild(child)
+		});
+	</script>
 
 </body>
 
