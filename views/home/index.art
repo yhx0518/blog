@@ -92,7 +92,7 @@
 					<div style="height: auto;">
 					<a href="#">
 					</a>
-					<div class="vtab-item"><a href="/home/articles?id={{@$value._id}}">
+					<div class="vtab-item"><a href="/home/articles?goodId={{@$value._id}}">
 							<img src="{{$value.cover}}" class="item-img">
 						</a>
 						<div class="item-info clickfocus"><a href="/home/articles?goodId={{@$value._id}}">
